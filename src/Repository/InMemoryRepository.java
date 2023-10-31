@@ -42,7 +42,7 @@ public class InMemoryRepository<T> implements Repository<T> {
                 throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost gasita si nu poate fi stearsa");
             }
         } else {
-            throw new IllegalArgumentException("Entitatea trebuie să aiba un ID valid pentru a fi stearsa");
+            throw new IllegalArgumentException("Entitatea trebuie sa aiba un ID valid pentru a fi stearsa");
         }
     }
 
@@ -51,7 +51,7 @@ public class InMemoryRepository<T> implements Repository<T> {
         if (id > 0) {
             return data.get(id);
         } else {
-            throw new IllegalArgumentException("ID-ul trebuie să fie un numar valid pentru a obține entitatea");
+            throw new IllegalArgumentException("ID-ul trebuie sa fie un numar valid pentru a obtine entitatea");
         }
     }
 
@@ -65,7 +65,7 @@ public class InMemoryRepository<T> implements Repository<T> {
             idField.setAccessible(true);
             return (int) idField.get(item);
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new IllegalArgumentException("Entitatea trebuie să aiba un camp 'id' pentru a obține ID-ul");
+            throw new IllegalArgumentException("Entitatea trebuie sa aiba un camp 'id' pentru a obtine ID-ul");
         }
     }
 
