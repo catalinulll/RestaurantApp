@@ -24,10 +24,10 @@ public class InMemoryRepository<T> implements Repository<T> {
             if (data.containsKey(itemId)) {
                 data.put(itemId, item);
             } else {
-                throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost găsită.");
+                throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost gasita");
             }
         } else {
-            throw new IllegalArgumentException("Entitatea trebuie să aibă un ID valid pentru a fi actualizată.");
+            throw new IllegalArgumentException("Entitatea trebuie să aiba un ID valid pentru a fi actualizata");
         }
     }
 
@@ -39,10 +39,10 @@ public class InMemoryRepository<T> implements Repository<T> {
             if (data.containsKey(itemId)) {
                 data.remove(itemId);
             } else {
-                throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost găsită și nu poate fi ștearsă.");
+                throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost gasita si nu poate fi stearsa");
             }
         } else {
-            throw new IllegalArgumentException("Entitatea trebuie să aibă un ID valid pentru a fi ștearsă.");
+            throw new IllegalArgumentException("Entitatea trebuie să aiba un ID valid pentru a fi stearsa");
         }
     }
 
@@ -51,7 +51,7 @@ public class InMemoryRepository<T> implements Repository<T> {
         if (id > 0) {
             return data.get(id);
         } else {
-            throw new IllegalArgumentException("ID-ul trebuie să fie un număr valid pentru a obține entitatea.");
+            throw new IllegalArgumentException("ID-ul trebuie să fie un numar valid pentru a obține entitatea");
         }
     }
 
