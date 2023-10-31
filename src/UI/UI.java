@@ -41,7 +41,7 @@ public class UI {
                         if (foundTische != null) {
                             System.out.println("Masa gasita: " + foundTische);
                         } else {
-                            System.out.println("Masa nu a fost gasita.");
+                            System.out.println("Masa nu a fost gasita");
                         }
                     } catch (EntityNotFoundException e) {
                         System.out.println(e.getMessage());
@@ -59,7 +59,7 @@ public class UI {
                         int newAnzahlDerPersonen = scanner.nextInt();
                         existingTische.setAnzahl_der_Personen(newAnzahlDerPersonen);
                         tischeController.update(existingTische);
-                        System.out.println("Masa actualizata.");
+                        System.out.println("Masa actualizata");
                     } catch (EntityNotFoundException e) {
                         System.out.println(e.getMessage());
                     }
@@ -93,7 +93,7 @@ public class UI {
                     break;
 
                 default:
-                    System.out.println("Optiune invalida. Alegeți din nou.");
+                    System.out.println("Optiune invalida. Alegeti din nou");
             }
         }
     }
