@@ -61,9 +61,9 @@ public class InMemoryRepository<T> implements Repository<T> {
         }
 
         try {
-            Field idField = item.getClass().getDeclaredField("id");
-            idField.setAccessible(true);
-            return (int) idField.get(item);
+            Field idField = item.getClass().getDeclaredField("id"); // obtinem tipul de clasa al item, cautam campul id
+            idField.setAccessible(true); // facem accesibil campul id
+            return (int) idField.get(item); // returnam valoarea campului id
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new IllegalArgumentException("Entitatea trebuie sa aiba un camp 'id' pentru a obtine ID-ul");
         }
