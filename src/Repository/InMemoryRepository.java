@@ -24,10 +24,10 @@ public class InMemoryRepository<T> implements Repository<T> {
             if (data.containsKey(itemId)) {
                 data.put(itemId, item);
             } else {
-                throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost găsită.");
+                throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost gasita");
             }
         } else {
-            throw new IllegalArgumentException("Entitatea trebuie să aibă un ID valid pentru a fi actualizată.");
+            throw new IllegalArgumentException("Entitatea trebuie să aiba un ID valid pentru a fi actualizata");
         }
     }
 
@@ -42,7 +42,7 @@ public class InMemoryRepository<T> implements Repository<T> {
                 throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost gasita si nu poate fi stearsa");
             }
         } else {
-            throw new IllegalArgumentException("Entitatea trebuie să aiba un ID valid pentru a fi ștearsa");
+            throw new IllegalArgumentException("Entitatea trebuie sa aiba un ID valid pentru a fi stearsa");
         }
     }
 
@@ -61,9 +61,9 @@ public class InMemoryRepository<T> implements Repository<T> {
         }
 
         try {
-            Field idField = item.getClass().getDeclaredField("id");
-            idField.setAccessible(true);
-            return (int) idField.get(item);
+            Field idField = item.getClass().getDeclaredField("id"); // obtinem tipul de clasa al item, cautam campul id
+            idField.setAccessible(true); // facem accesibil campul id
+            return (int) idField.get(item); // returnam valoarea campului id
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new IllegalArgumentException("Entitatea trebuie sa aiba un camp 'id' pentru a obtine ID-ul");
         }

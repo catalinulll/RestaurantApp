@@ -1,6 +1,6 @@
 package Repository;
 
-import Domain.Gericht_im_Online_Bestellung;
+import Domain.*;
 import Exceptions.EntityNotFoundException;
 
 import java.util.ArrayList;
@@ -8,20 +8,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Gericht_im_Online_Bestellung_Repo extends InMemoryRepository<Gericht_im_Online_Bestellung> {
-    private Map<Integer, Gericht_im_Online_Bestellung> data = new HashMap<>();
+public class Gericht_im_Bestellung_im_Restaurant_Repo extends InMemoryRepository<Gericht_im_Bestellung_im_Restaurant> {
+    private Map<Integer, Gericht_im_Bestellung_im_Restaurant> data = new HashMap<>();
     private int nextId = 1;
 
     @Override
-    public void add(Gericht_im_Online_Bestellung gericht) {
+    public void add(Gericht_im_Bestellung_im_Restaurant gericht) {
         data.put(nextId, gericht);
-        gericht.setID_Gericht_im_Restaurant(nextId);
+        gericht.setID_Online_Bestellung(nextId);
         nextId++;
     }
 
     @Override
-    public void update(Gericht_im_Online_Bestellung gericht) {
-        int itemId = gericht.getID_Gericht_im_Restaurant();
+    public void update(Gericht_im_Bestellung_im_Restaurant gericht) {
+        int itemId = gericht.getID_Online_Bestellung();
 
         if (itemId > 0) {
             if (data.containsKey(itemId)) {
@@ -35,8 +35,8 @@ public class Gericht_im_Online_Bestellung_Repo extends InMemoryRepository<Gerich
     }
 
     @Override
-    public void delete(Gericht_im_Online_Bestellung gericht) {
-        int itemId = gericht.getID_Gericht_im_Restaurant();
+    public void delete(Gericht_im_Bestellung_im_Restaurant gericht) {
+        int itemId = gericht.getID_Online_Bestellung();
 
         if (itemId > 0) {
             if (data.containsKey(itemId)) {
@@ -50,7 +50,7 @@ public class Gericht_im_Online_Bestellung_Repo extends InMemoryRepository<Gerich
     }
 
     @Override
-    public Gericht_im_Online_Bestellung getId(int id) {
+    public Gericht_im_Bestellung_im_Restaurant getId(int id) {
         if (id > 0) {
             return data.get(id);
         } else {
@@ -59,7 +59,7 @@ public class Gericht_im_Online_Bestellung_Repo extends InMemoryRepository<Gerich
     }
 
     @Override
-    public List<Gericht_im_Online_Bestellung> getAll() {
+    public List<Gericht_im_Bestellung_im_Restaurant> getAll() {
         return new ArrayList<>(data.values());
     }
 }

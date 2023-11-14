@@ -4,7 +4,6 @@ public class Lebensmittel_im_Essen {
     private int ID_Lebensmittel_im_Essen;
     private int ID_Gericht;
     private String Name_Lebensmittel;
-    private int Kalorien;
 
     public int getID_Lebensmittel_im_Essen() {
         return ID_Lebensmittel_im_Essen;
@@ -29,8 +28,4 @@ public class Lebensmittel_im_Essen {
     public void setName_Lebensmittel(String Name_Lebensmittel) {
         this.Name_Lebensmittel = Name_Lebensmittel;
     }
-
-    public int getKalorien() { return Kalorien; }
-
-    public void setKalorien(int Kalorien) { this.Kalorien = Kalorien; }
 }

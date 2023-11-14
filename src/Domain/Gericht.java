@@ -1,6 +1,6 @@
 package Domain;
 
-public class Gerichten {
+public class Gericht {
     private int ID_Gericht;
     private String Name;
     private String Typ;
