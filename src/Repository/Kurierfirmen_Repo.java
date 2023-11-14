@@ -25,6 +25,10 @@ public class Kurierfirmen_Repo extends InMemoryRepository<Kurierfirmen> {
 
         if (itemId > 0) {
             if (data.containsKey(itemId)) {
+                Kurierfirmen existingKurierfirmen = data.get(itemId);
+
+                existingKurierfirmen.setKuriername(kurierfirmen.getKuriername());
+
                 data.put(itemId, kurierfirmen);
             } else {
                 throw new EntityNotFoundException("Kurierfirma with ID " + itemId + " was not found");

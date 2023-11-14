@@ -32,10 +32,10 @@ public class Feedback_Repo extends InMemoryRepository<Feedback> {
             if (data.containsKey(itemId)) {
                 data.put(itemId, feedback);
             } else {
-                throw new EntityNotFoundException("Feedback with ID " + itemId + " was not found");
+                throw new EntityNotFoundException("Feedback-ul cu ID-ul " + itemId + " nu a fost gasit");
             }
         } else {
-            throw new IllegalArgumentException("Feedback must have a valid ID to be updated");
+            throw new IllegalArgumentException("Feedback-ul trebuie sa fie unul valabil pentru a putea fi actualizat");
         }
     }
 
@@ -47,10 +47,10 @@ public class Feedback_Repo extends InMemoryRepository<Feedback> {
             if (data.containsKey(itemId)) {
                 data.remove(itemId);
             } else {
-                throw new EntityNotFoundException("Feedback with ID " + itemId + " was not found and cannot be deleted");
+                throw new EntityNotFoundException("Feedback-ul cu ID-ul " + itemId + " nu a fost gasit si nu poate fi sters");
             }
         } else {
-            throw new IllegalArgumentException("Feedback must have a valid ID to be deleted");
+            throw new IllegalArgumentException("Feedback-ul trebuie sa fie valabil pentru a putea fi sters");
         }
     }
 
@@ -59,7 +59,7 @@ public class Feedback_Repo extends InMemoryRepository<Feedback> {
         if (id > 0) {
             return data.get(id);
         } else {
-            throw new IllegalArgumentException("ID must be a valid number to get the feedback");
+            throw new IllegalArgumentException("ID-ul trebuie sa fie valabil pentru a putea fi gasit Feedback-ul");
         }
     }
 

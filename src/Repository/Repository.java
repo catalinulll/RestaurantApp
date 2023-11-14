@@ -9,4 +9,3 @@ public interface Repository<T> {
     int getIdFromItem(T item);
     List<T> getAll();
 }
-

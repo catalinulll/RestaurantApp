@@ -30,7 +30,7 @@ public class Tische_Repo extends InMemoryRepository<Tische> {
                 throw new EntityNotFoundException("Masa cu ID-ul " + itemId + " nu a fost gasita");
             }
         } else {
-            throw new IllegalArgumentException("Masa trebuie să aiba un ID valid pentru a fi actualizata");
+            throw new IllegalArgumentException("Masa trebuie sa aiba un ID valid pentru a fi actualizata");
         }
     }
 
@@ -45,7 +45,7 @@ public class Tische_Repo extends InMemoryRepository<Tische> {
                 throw new EntityNotFoundException("Masa cu ID-ul " + itemId + " nu a fost gasita si nu poate fi stearsa");
             }
         } else {
-            throw new IllegalArgumentException("Masa trebuie să aiba un ID valid pentru a fi stearsa");
+            throw new IllegalArgumentException("Masa trebuie sa aiba un ID valid pentru a fi stearsa");
         }
     }
 
@@ -54,7 +54,7 @@ public class Tische_Repo extends InMemoryRepository<Tische> {
         if (id > 0) {
             return data.get(id);
         } else {
-            throw new IllegalArgumentException("ID-ul trebuie să fie un numar valid pentru a obține masa");
+            throw new IllegalArgumentException("ID-ul trebuie sa fie un numar valid pentru a obtine masa");
         }
     }
 

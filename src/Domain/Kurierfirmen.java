@@ -9,9 +9,23 @@ public class Kurierfirmen {
     private String Kuriername;
     private int ID_Kurier;
 
+    private Lieferzustand lieferzustand;
+
+    private static int lastUsedId = 0;
+
+    private int generateUniqueId() {
+        return lastUsedId++;
+    }
     private Lieferkontext deliveryContext = new Lieferkontext();
 
     private TransportType transportType;
+
+    public Kurierfirmen() {
+        this.ID_Kurierfirma = generateUniqueId();
+        this.Kuriername = "Vasile";
+        this.transportType = TransportType.MASINA;
+
+    }
 
 
     public int getID_Kurierfirma() {
@@ -43,12 +57,25 @@ public class Kurierfirmen {
     }
 
 
-    public void setDeliveryTransport(TransportType transportType) {
-        this.transportType = transportType;
+    public void setDeliveryTransport() {
+        this.transportType = TransportType.getRandomTransportType();
     }
 
 
     public TransportType getTransportType() {
         return transportType;
+    }
+
+    public Lieferzustand getLieferzustand() {
+        return lieferzustand;
+    }
+
+    public void setLieferzustand(Lieferzustand lieferzustand) {
+        this.lieferzustand = lieferzustand;
+    }
+
+    @Override
+    public String toString() {
+        return "Kurierfirma{ID_Kurierfirma=" + ID_Kurierfirma + ", Kuriername=" + Kuriername + ", TransportType=" + transportType + "}";
     }
 }
