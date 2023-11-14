@@ -7,9 +7,9 @@ public class Chef implements Employee {
     private String name;
     private String address;
     private Date hireDate;
-    private long phoneNumber;
+    private String phoneNumber;
 
-    public Chef(int ID, String name, String address, Date hireDate, long phoneNumber) {
+    public Chef(int ID, String name, String address, Date hireDate, String phoneNumber) {
         this.ID = ID;
         this.name = name;
         this.address = address;
@@ -38,8 +38,7 @@ public class Chef implements Employee {
     }
 
     @Override
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 }
-

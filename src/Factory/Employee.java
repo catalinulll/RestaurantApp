@@ -7,5 +7,5 @@ public interface Employee {
     String getName();
     String getAddress();
     Date getHireDate();
-    long getPhoneNumber();
+    String getPhoneNumber();
 }

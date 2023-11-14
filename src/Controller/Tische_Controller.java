@@ -7,4 +7,3 @@ public class Tische_Controller extends Controller<Tische> {
         super(repository);
     }
 }
-

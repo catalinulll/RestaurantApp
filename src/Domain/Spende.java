@@ -38,4 +38,3 @@ public class Spende {
         this.Portionenanzahl = Portionenanzahl;
     }
 }
-

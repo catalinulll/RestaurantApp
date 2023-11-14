@@ -27,7 +27,7 @@ public class InMemoryRepository<T> implements Repository<T> {
                 throw new EntityNotFoundException("Entitatea cu ID-ul " + itemId + " nu a fost gasita");
             }
         } else {
-            throw new IllegalArgumentException("Entitatea trebuie să aiba un ID valid pentru a fi actualizata");
+            throw new IllegalArgumentException("Entitatea trebuie sa aiba un ID valid pentru a fi actualizata");
         }
     }
 

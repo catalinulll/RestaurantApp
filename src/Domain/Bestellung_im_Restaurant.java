@@ -1,40 +1,53 @@
 package Domain;
 
-public class Bestellung_im_Restaurant {
-    private int ID_Bestellung_im_Restaurant;
-    private int ID_Tisch;
-    private float Preis;
-    private int ID_Mitarbeiter;
+
+import Observer.BestellungSubject;
+
+import java.util.Date;
+
+public class Bestellung_im_Restaurant extends BestellungSubject {
+    private int bestellungID;
+    private Date data;
+    private String details;
+
+    public Bestellung_im_Restaurant(int bestellungID, Date data, String details) {
+        this.bestellungID = bestellungID;
+        this.data = data;
+        this.details = String.valueOf(details);
+    }
+
+    public int getBestellungID() {
+        return bestellungID;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void updateBestellungDetails(String newDetails) {
+        this.details = newDetails;
+
+        notifyObservers(this);
+    }
+
+    public void notifyObservers(Bestellung_im_Restaurant updatedBestellung) {
+        super.notifyObservers(updatedBestellung);
+    }
+
+
+    public void setID_Bestellung_im_Restaurant(int nextId) {
+    }
 
     public int getID_Bestellung_im_Restaurant() {
-        return ID_Bestellung_im_Restaurant;
+        return bestellungID;
     }
 
-    public void setID_Bestellung_im_Restaurant(int ID_Bestellung_im_Restaurant) {
-        this.ID_Bestellung_im_Restaurant = ID_Bestellung_im_Restaurant;
-    }
-
-    public int getID_Tisch() {
-        return ID_Tisch;
-    }
-
-    public void setID_Tisch(int ID_Tisch) {
-        this.ID_Tisch = ID_Tisch;
-    }
-
-    public float getPreis() {
-        return Preis;
-    }
-
-    public void setPreis(float Preis) {
-        this.Preis = Preis;
-    }
-
-    public int getID_Mitarbeiter() {
-        return ID_Mitarbeiter;
-    }
-
-    public void setID_Mitarbeiter(int ID_Mitarbeiter) {
-        this.ID_Mitarbeiter = ID_Mitarbeiter;
+    @Override
+    public String toString() {
+        return "Bestellung_im_Restaurant{ID_Bestellung=" + bestellungID + ", Date=" + data + ", ID_Gericht=" + details + "}";
     }
 }
