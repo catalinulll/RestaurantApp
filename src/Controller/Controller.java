@@ -1,10 +1,11 @@
 package Controller;
+import Domain.Kurierfirmen;
 import Exceptions.EntityNotFoundException;
 import Repository.Repository;
 import java.util.List;
 
 public class Controller<T> {
-    private final Repository<T> repository;
+    Repository<T> repository;
 
     public Controller(Repository<T> repository) {
         this.repository = repository;

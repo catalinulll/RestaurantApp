@@ -4,7 +4,7 @@ public class Kunden {
     private int ID_Kunde;
     private String Name;
     private String Adresse;
-    private long Telefonnummer;
+    private String Telefonnummer;
 
     public int getID_Kunde() {
         return ID_Kunde;
@@ -30,11 +30,21 @@ public class Kunden {
         this.Adresse = Adresse;
     }
 
-    public long getTelefonnummer() {
+    public String getTelefonnummer() {
         return Telefonnummer;
     }
 
-    public void setTelefonnummer(long Telefonnummer) {
+    public void setTelefonnummer(String Telefonnummer) {
         this.Telefonnummer = Telefonnummer;
+    }
+
+    @Override
+    public String toString() {
+        return "Kunden{" +
+                "ID_Kunde=" + ID_Kunde +
+                ", Name='" + Name + '\'' +
+                ", Adresse='" + Adresse + '\'' +
+                ", Telefonnummer=" + Telefonnummer +
+                '}';
     }
 }

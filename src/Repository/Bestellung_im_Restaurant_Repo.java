@@ -27,10 +27,10 @@ public class Bestellung_im_Restaurant_Repo extends InMemoryRepository<Bestellung
             if (data.containsKey(itemId)) {
                 data.put(itemId, bestellung);
             } else {
-                throw new EntityNotFoundException("Bestellung mit ID-ul " + itemId + " wurde nicht gefunden");
+                throw new EntityNotFoundException("Comanda cu ID-ul " + itemId + " nu a fost gasita");
             }
         } else {
-            throw new IllegalArgumentException("Bestellung muss eine gültige ID haben, um aktualisiert zu werden");
+            throw new IllegalArgumentException("Comanda trebuie sa aiba un ID valabil pentru a putea fi actualizata");
         }
     }
 
@@ -42,10 +42,10 @@ public class Bestellung_im_Restaurant_Repo extends InMemoryRepository<Bestellung
             if (data.containsKey(itemId)) {
                 data.remove(itemId);
             } else {
-                throw new EntityNotFoundException("Bestellung mit ID-ul " + itemId + " wurde nicht gefunden und kann nicht gelöscht werden");
+                throw new EntityNotFoundException("Comanda cu ID-ul " + itemId + " nu a fost gasita si nu poate fi stearsa");
             }
         } else {
-            throw new IllegalArgumentException("Bestellung muss eine gültige ID haben, um gelöscht zu werden");
+            throw new IllegalArgumentException("Comanda trebuie sa aiba un ID valabil pentru a putea fi stearsa");
         }
     }
 
@@ -54,7 +54,7 @@ public class Bestellung_im_Restaurant_Repo extends InMemoryRepository<Bestellung
         if (id > 0) {
             return data.get(id);
         } else {
-            throw new IllegalArgumentException("ID muss eine gültige Nummer sein, um Bestellung zu erhalten");
+            throw new IllegalArgumentException("ID-ul trebuie sa fie un numar valabil pentru a putea fi gasit");
         }
     }
 

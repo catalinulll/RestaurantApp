@@ -13,7 +13,7 @@ public class Bestellung_im_Restaurant extends BestellungSubject {
     public Bestellung_im_Restaurant(int bestellungID, Date data, String details) {
         this.bestellungID = bestellungID;
         this.data = data;
-        this.details = details;
+        this.details = String.valueOf(details);
     }
 
     public int getBestellungID() {
@@ -44,5 +44,10 @@ public class Bestellung_im_Restaurant extends BestellungSubject {
 
     public int getID_Bestellung_im_Restaurant() {
         return bestellungID;
+    }
+
+    @Override
+    public String toString() {
+        return "Bestellung_im_Restaurant{ID_Bestellung=" + bestellungID + ", Date=" + data + ", ID_Gericht=" + details + "}";
     }
 }
