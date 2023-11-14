@@ -1,6 +1,5 @@
 package Strategy;
 
-import Domain.Kurierfirmen;
 
 public class Lieferkontext {
     private Lieferzustand deliveryState;
