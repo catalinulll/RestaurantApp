@@ -2,13 +2,23 @@ package Domain;
 
 import java.util.Date;
 
-public class Mitarbeiter {
+public class Mitarbeiter  {
     private int ID_Mitarbeiter;
     private String Name;
     private String Adresse;
     private Date Einstellungdatum;
     private long Telefonnummer;
     private String Beruf;
+
+    public Mitarbeiter(int ID_Mitarbeiter, String Name, String Adresse, Date Einstellungdatum, long Telefonnummer, String Beruf) {
+        this.ID_Mitarbeiter = ID_Mitarbeiter;
+        this.Name = Name;
+        this.Adresse = Adresse;
+        this.Einstellungdatum = Einstellungdatum;
+        this.Telefonnummer = Telefonnummer;
+        this.Beruf = Beruf;
+    }
+
 
     public int getID_Mitarbeiter() {
         return ID_Mitarbeiter;
@@ -57,5 +67,6 @@ public class Mitarbeiter {
     public void setBeruf(String Beruf) {
         this.Beruf = Beruf;
     }
+
 }
 
