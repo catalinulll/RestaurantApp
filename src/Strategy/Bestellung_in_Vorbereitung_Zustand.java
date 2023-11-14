@@ -10,7 +10,7 @@ public class Bestellung_in_Vorbereitung_Zustand implements Lieferzustand {
     }
 
     @Override
-    public void handleDeliveryState(Kurierfirmen kurierfirmen) {
+    public void handleDeliveryType(Kurierfirmen kurierfirmen) {
         System.out.println("Tip de transport: " + transportType);
     }
 
@@ -18,5 +18,4 @@ public class Bestellung_in_Vorbereitung_Zustand implements Lieferzustand {
     public boolean isInDeliveryState() {
         return transportType != null;
     }
-
 }
