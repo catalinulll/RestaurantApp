@@ -1,6 +1,6 @@
 package Repository;
 
-import Domain.*;
+import Domain.Gericht;
 import Exceptions.EntityNotFoundException;
 
 import java.util.ArrayList;
@@ -8,20 +8,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Gericht_im_Bestellung_im_Restaurant_Repo extends InMemoryRepository<Gericht_im_Bestellung_im_Restaurant> {
-    private Map<Integer, Gericht_im_Bestellung_im_Restaurant> data = new HashMap<>();
+public class Gericht_Repo extends InMemoryRepository<Gericht> {
+    private Map<Integer, Gericht> data = new HashMap<>();
     private int nextId = 1;
 
     @Override
-    public void add(Gericht_im_Bestellung_im_Restaurant gericht) {
+    public void add(Gericht gericht) {
         data.put(nextId, gericht);
-        gericht.setID_Online_Bestellung(nextId);
+        gericht.setID_Gericht(nextId);
         nextId++;
     }
 
     @Override
-    public void update(Gericht_im_Bestellung_im_Restaurant gericht) {
-        int itemId = gericht.getID_Online_Bestellung();
+    public void update(Gericht gericht) {
+        int itemId = gericht.getID_Gericht();
 
         if (itemId > 0) {
             if (data.containsKey(itemId)) {
@@ -35,8 +35,8 @@ public class Gericht_im_Bestellung_im_Restaurant_Repo extends InMemoryRepository
     }
 
     @Override
-    public void delete(Gericht_im_Bestellung_im_Restaurant gericht) {
-        int itemId = gericht.getID_Online_Bestellung();
+    public void delete(Gericht gericht) {
+        int itemId = gericht.getID_Gericht();
 
         if (itemId > 0) {
             if (data.containsKey(itemId)) {
@@ -50,7 +50,7 @@ public class Gericht_im_Bestellung_im_Restaurant_Repo extends InMemoryRepository
     }
 
     @Override
-    public Gericht_im_Bestellung_im_Restaurant getId(int id) {
+    public Gericht getId(int id) {
         if (id > 0) {
             return data.get(id);
         } else {
@@ -59,7 +59,7 @@ public class Gericht_im_Bestellung_im_Restaurant_Repo extends InMemoryRepository
     }
 
     @Override
-    public List<Gericht_im_Bestellung_im_Restaurant> getAll() {
+    public List<Gericht> getAll() {
         return new ArrayList<>(data.values());
     }
 }

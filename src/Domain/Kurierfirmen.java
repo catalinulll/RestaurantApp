@@ -1,9 +1,18 @@
 package Domain;
 
+import Strategy.Lieferkontext;
+import Strategy.Lieferzustand;
+import Strategy.TransportType;
+
 public class Kurierfirmen {
     private int ID_Kurierfirma;
     private String Kuriername;
     private int ID_Kurier;
+
+    private Lieferkontext deliveryContext = new Lieferkontext();
+
+    private TransportType transportType;
+
 
     public int getID_Kurierfirma() {
         return ID_Kurierfirma;
@@ -27,5 +36,19 @@ public class Kurierfirmen {
 
     public void setID_Kurier(int ID_Kurier) {
         this.ID_Kurier = ID_Kurier;
+    }
+
+    public void setDeliveryState(Lieferzustand deliveryState) {
+        this.deliveryContext.setDeliveryState(deliveryState);
+    }
+
+
+    public void setDeliveryTransport(TransportType transportType) {
+        this.transportType = transportType;
+    }
+
+
+    public TransportType getTransportType() {
+        return transportType;
     }
 }

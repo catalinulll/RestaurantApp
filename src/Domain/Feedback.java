@@ -48,4 +48,9 @@ public class Feedback {
     public void setID_Mitarbeiter(int ID_Mitarbeiter) {
         this.ID_Mitarbeiter = ID_Mitarbeiter;
     }
+
+    @Override
+    public String toString() {
+        return "Feedback{ID_Feedback=" + ID_Feedback + ", Anzahl_der_Sterne=" + Anzahl_der_Sterne + "}";
+    }
 }
