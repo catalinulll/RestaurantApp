@@ -8,12 +8,12 @@ import java.util.Date;
 public class Bestellung_im_Restaurant extends BestellungSubject {
     private int bestellungID;
     private Date data;
-    private String details;
+    private float preis;
 
-    public Bestellung_im_Restaurant(int bestellungID, Date data, String details) {
+    public Bestellung_im_Restaurant(int bestellungID, Date data, float preis) {
         this.bestellungID = bestellungID;
         this.data = data;
-        this.details = String.valueOf(details);
+        this.preis = preis;
     }
 
     public int getBestellungID() {
@@ -24,12 +24,12 @@ public class Bestellung_im_Restaurant extends BestellungSubject {
         return data;
     }
 
-    public String getDetails() {
-        return details;
+    public float getPreis() {
+        return preis;
     }
 
-    public void updateBestellungDetails(String newDetails) {
-        this.details = newDetails;
+    public void updateBestellungPreis(float neue_preis) {
+        this.preis = neue_preis;
 
         notifyObservers(this);
     }
@@ -48,6 +48,6 @@ public class Bestellung_im_Restaurant extends BestellungSubject {
 
     @Override
     public String toString() {
-        return "Bestellung_im_Restaurant{ID_Bestellung=" + bestellungID + ", Date=" + data + ", ID_Gericht=" + details + "}";
+        return "Bestellung_im_Restaurant{ID_Bestellung=" + bestellungID + ", Date=" + data + ", Preis=" + preis + "}";
     }
 }
