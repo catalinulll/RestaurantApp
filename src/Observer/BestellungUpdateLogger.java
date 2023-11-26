@@ -8,7 +8,7 @@ public class BestellungUpdateLogger implements BestellungObserver {
 
     @Override
     public void updateBestellung(Bestellung_im_Restaurant updatedBestellung) {
-        lastUpdate = String.valueOf(updatedBestellung.getDetails());
+        lastUpdate = String.valueOf(updatedBestellung.getPreis());
         System.out.println("Comanda actualizata: " + lastUpdate);
     }
 

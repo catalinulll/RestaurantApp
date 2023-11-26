@@ -9,6 +9,8 @@ public class Feedback {
     private int ID_Kunde;
     private int ID_Mitarbeiter;
 
+
+
     public int getID_Feedback() {
         return ID_Feedback;
     }
@@ -51,6 +53,6 @@ public class Feedback {
 
     @Override
     public String toString() {
-        return "Feedback{ID_Feedback=" + ID_Feedback + ", Anzahl_der_Sterne=" + Anzahl_der_Sterne + "}";
+        return "Feedback{ID_Feedback=" + ID_Feedback + ", Anzahl_der_Sterne=" + Anzahl_der_Sterne + ", Datum= " + Datum + ", ID_Kunde= " + ID_Kunde + ",ID_Mitarbeiter= " + ID_Mitarbeiter + "}";
     }
 }

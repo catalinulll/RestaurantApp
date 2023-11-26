@@ -24,13 +24,22 @@ public class Feedback_Repo extends InMemoryRepository<Feedback> {
     }
 
 
+
     @Override
     public void update(Feedback feedback) {
         int itemId = feedback.getID_Feedback();
 
         if (itemId > 0) {
             if (data.containsKey(itemId)) {
-                data.put(itemId, feedback);
+                Feedback existingFeedback = data.get(itemId);
+
+                // Actualizează doar câmpurile necesare
+                existingFeedback.setAnzahl_der_Sterne(feedback.getAnzahl_der_Sterne());
+                existingFeedback.setDatum(feedback.getDatum());
+                existingFeedback.setID_Kunde(feedback.getID_Kunde());
+                existingFeedback.setID_Mitarbeiter(feedback.getID_Mitarbeiter());
+
+                data.put(itemId, existingFeedback);
             } else {
                 throw new EntityNotFoundException("Feedback-ul cu ID-ul " + itemId + " nu a fost gasit");
             }
@@ -38,6 +47,7 @@ public class Feedback_Repo extends InMemoryRepository<Feedback> {
             throw new IllegalArgumentException("Feedback-ul trebuie sa fie unul valabil pentru a putea fi actualizat");
         }
     }
+
 
     @Override
     public void delete(Feedback feedback) {
@@ -62,6 +72,8 @@ public class Feedback_Repo extends InMemoryRepository<Feedback> {
             throw new IllegalArgumentException("ID-ul trebuie sa fie valabil pentru a putea fi gasit Feedback-ul");
         }
     }
+
+
 
     @Override
     public List<Feedback> getAll() {
