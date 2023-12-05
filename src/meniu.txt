@@ -1,0 +1,11 @@
+Categorie: Aperitive
+1. Aperitiv 1 - 10$
+2. Aperitiv 2 - 12$
+
+Categorie: Feluri principale
+3. Fel principal 1 - 20$
+4. Fel principal 2 - 25$
+
+Categorie: Deserturi
+5. Desert 1 - 8$
+6. Desert 2 - 10$

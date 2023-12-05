@@ -1,0 +1,2 @@
+Tische{TischeNumber=1, Anzahl_der_Personen=4}
+Tische{TischeNumber=2, Anzahl_der_Personen=7}
