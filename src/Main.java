@@ -61,16 +61,5 @@ public class Main {
         Kurierfirmen kurierfirmen = KurierfirmenSingleton.getInstance();
         System.out.println("\n\n");
 
-
-
-
-// Strategy
-        Kurierfirmen kurierfirmenn = new Kurierfirmen();
-
-        Lieferzustand lieferzustand = new Bestellung_in_Vorbereitung_Zustand();
-        ((Bestellung_in_Vorbereitung_Zustand) lieferzustand).setDeliveryTransport(TransportType.MASINA);
-
-        lieferzustand.handleDeliveryType(kurierfirmenn);
-
     }
 }

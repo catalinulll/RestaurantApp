@@ -1,7 +1,6 @@
 package Domain;
 
 import Strategy.Lieferkontext;
-import Strategy.Lieferzustand;
 import Strategy.TransportType;
 
 public class Kurierfirmen {
@@ -9,9 +8,10 @@ public class Kurierfirmen {
     private String Kuriername;
     private int ID_Kurier;
 
-    private Lieferzustand lieferzustand;
+    private Lieferkontext lieferzustand;
 
     private static int lastUsedId = 0;
+    private Lieferkontext lieferkontext;
 
     private int generateUniqueId() {
         return lastUsedId++;
@@ -52,9 +52,6 @@ public class Kurierfirmen {
         this.ID_Kurier = ID_Kurier;
     }
 
-    public void setDeliveryState(Lieferzustand deliveryState) {
-        this.deliveryContext.setDeliveryState(deliveryState);
-    }
 
 
     public void setDeliveryTransport() {
@@ -66,11 +63,11 @@ public class Kurierfirmen {
         return transportType;
     }
 
-    public Lieferzustand getLieferzustand() {
+    public Lieferkontext getLieferzustand() {
         return lieferzustand;
     }
 
-    public void setLieferzustand(Lieferzustand lieferzustand) {
+    public void setLieferkontext(Lieferkontext lieferzustand) {
         this.lieferzustand = lieferzustand;
     }
 
@@ -78,4 +75,8 @@ public class Kurierfirmen {
     public String toString() {
         return "Kurierfirma{ID_Kurierfirma=" + ID_Kurierfirma + ", Kuriername=" + Kuriername + ", TransportType=" + transportType + "}";
     }
+
+    public void setLieferzustand(Lieferkontext lieferkontext) { this.lieferkontext = lieferkontext;
+    }
+
 }

@@ -1,16 +1,19 @@
 package Strategy;
 
+import Domain.Kurierfirmen;
 
 public class Lieferkontext {
-    private Lieferzustand deliveryState;
-    private TransportType deliveryTransport;
-
-    public void setDeliveryState(Lieferzustand deliveryState) {
-        this.deliveryState = deliveryState;
-    }
+    private TransportType transportType;
 
     public void setDeliveryTransport(TransportType transportType) {
-        this.deliveryTransport = transportType;
+        this.transportType = transportType;
     }
 
+    public void handleDeliveryType(Kurierfirmen kurierfirmen) {
+        System.out.println("Tip de transport: " + transportType);
+    }
+
+    public boolean isInDeliveryState() {
+        return transportType != null;
+    }
 }

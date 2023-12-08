@@ -6,8 +6,7 @@ import Factory.Employee;
 import Factory.EmployeeFactory;
 import Observer.BestellungUpdateLogger;
 import Singleton.KurierfirmenSingleton;
-import Strategy.Bestellung_in_Vorbereitung_Zustand;
-import Strategy.Lieferzustand;
+import Strategy.Lieferkontext;
 import Strategy.TransportType;
 
 
@@ -24,7 +23,7 @@ public class PatternTests {
         bestellung.updateBestellungDetails("Noile detalii pentru comanda");
 
         String lastUpdate = bestellungLogger.getLastUpdate();
-        if (!"Noi detalii comanda".equals(lastUpdate)) {
+        if (!"Noile detalii pentru comanda".equals(lastUpdate)) {
             throw new AssertionError("Actualizare incorecta: " + lastUpdate);
         }
 
@@ -74,10 +73,10 @@ public class PatternTests {
     public void testStrategyPattern() {
         Kurierfirmen kurierfirmen = new Kurierfirmen();
 
-        Lieferzustand lieferzustand = new Bestellung_in_Vorbereitung_Zustand();
-        ((Bestellung_in_Vorbereitung_Zustand) lieferzustand).setDeliveryTransport(TransportType.MASINA);
+        Lieferkontext lieferzustand = new Lieferkontext();
+        ((Lieferkontext) lieferzustand).setDeliveryTransport(TransportType.MASINA);
 
-        kurierfirmen.setLieferzustand(lieferzustand);
+        kurierfirmen.setLieferkontext(lieferzustand);
 
         lieferzustand.handleDeliveryType(kurierfirmen);
 

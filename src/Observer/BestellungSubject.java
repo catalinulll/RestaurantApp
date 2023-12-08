@@ -13,7 +13,7 @@ public class BestellungSubject {
     }
 
     public void removeObserver(BestellungObserver observer) {
-        observers.remove(observer);
+        observers .remove(observer);
     }
 
     public void notifyObservers(Bestellung_im_Restaurant updatedBestellung) {

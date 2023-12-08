@@ -3,7 +3,8 @@ package Strategy;
 import Domain.Kurierfirmen;
 
 public interface Lieferzustand {
-    void handleDeliveryType(Kurierfirmen kurierfirmen);
-
+    void handleDeliveryState(Kurierfirmen kurierfirmen);
     boolean isInDeliveryState();
 }
+
+
