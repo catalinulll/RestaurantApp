@@ -27,8 +27,8 @@ public class Feedback {
         this.Anzahl_der_Sterne = Anzahl_der_Sterne;
     }
 
-    public Date getDatum() {
-        return Datum;
+    public java.sql.Date getDatum() {
+        return (java.sql.Date) Datum;
     }
 
     public void setDatum(Date Datum) {

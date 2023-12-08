@@ -1,13 +1,14 @@
 package Controller;
+
 import Domain.Kurierfirmen;
 import Exceptions.EntityNotFoundException;
-import Repository.Repository;
+import DAO.Repo_DAO;
 import java.util.List;
 
 public class Controller<T> {
-    Repository<T> repository;
+    Repo_DAO<T> repository;
 
-    public Controller(Repository<T> repository) {
+    public Controller(Repo_DAO<T> repository) {
         this.repository = repository;
     }
 
@@ -16,7 +17,7 @@ public class Controller<T> {
     }
 
     public T read(int id) {
-        T item = repository.getId(id);
+        T item = repository.getById(id);
         if (item == null) {
             throw new EntityNotFoundException("Entitatea cu ID-ul " + id + " nu a fost gasita");
         }
@@ -28,12 +29,7 @@ public class Controller<T> {
     }
 
     public void delete(int id) {
-        T item = repository.getId(id);
-        if (item == null) {
-            throw new EntityNotFoundException("Entitatea cu ID-ul " + id + " nu a fost gasita si nu poate fi stearsa");
-        }
-        repository.delete(item);
-    }
+        repository.delete(id);  }
 
     public List<T> getAll() {
         return repository.getAll();

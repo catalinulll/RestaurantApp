@@ -1,9 +1,9 @@
 package Controller;
 import Domain.Tische;
-import Repository.Repository;
+import DAO.Repo_DAO;
 
 public class Tische_Controller extends Controller<Tische> {
-    public Tische_Controller(Repository<Tische> repository) {
+    public Tische_Controller(Repo_DAO<Tische> repository) {
         super(repository);
     }
 }

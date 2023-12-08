@@ -37,4 +37,12 @@ public class Spende {
     public void setPortionenanzahl(int Portionenanzahl) {
         this.Portionenanzahl = Portionenanzahl;
     }
+
+    public String getField1() {
+        return null;
+    }
+
+    public String getField2() {
+        return null;
+    }
 }

@@ -1,9 +1,9 @@
 package Controller;
 import Domain.Gericht;
-import Repository.Repository;
+import DAO.Repo_DAO;
 
 public class Gericht_Controller extends Controller<Gericht> {
-    public Gericht_Controller(Repository<Gericht> repository) {
+    public Gericht_Controller(Repo_DAO<Gericht> repository) {
         super(repository);
     }
 }

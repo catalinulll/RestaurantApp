@@ -1,12 +1,12 @@
 package Controller;
 import Domain.Feedback;
-import Repository.Repository;
+import DAO.Repo_DAO;
 public class Feedback_Controller extends Controller<Feedback> {
-    public Feedback_Controller(Repository<Feedback> repository) {
+    public Feedback_Controller(Repo_DAO<Feedback> repository) {
         super(repository);
     }
 
-    public void setRepository(Repository<Feedback> repository) {
+    public void setRepository(Repo_DAO<Feedback> repository) {
         this.repository = repository;
     }
 }

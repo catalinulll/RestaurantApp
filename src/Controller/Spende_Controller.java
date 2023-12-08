@@ -1,8 +1,8 @@
 package Controller;
 import Domain.Spende;
-import Repository.Repository;
+import DAO.Repo_DAO;
 public class Spende_Controller extends Controller<Spende> {
-    public Spende_Controller(Repository<Spende> repository) {
+    public Spende_Controller(Repo_DAO<Spende> repository) {
         super(repository);
     }
 }

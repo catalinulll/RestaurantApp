@@ -1,9 +1,9 @@
 package Controller;
 import Domain.Kurierfirmen;
-import Repository.Repository;
+import DAO.Repo_DAO;
 
 public class Kurierfirmen_Controller extends Controller<Kurierfirmen> {
-    public Kurierfirmen_Controller(Repository<Kurierfirmen> repository) {
+    public Kurierfirmen_Controller(Repo_DAO<Kurierfirmen> repository) {
         super(repository);
     }
 }

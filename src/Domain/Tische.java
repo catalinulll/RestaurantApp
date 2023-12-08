@@ -8,10 +8,11 @@ public class Tische {
     private int id;
 
     public Tische(int Anzahl_der_Personen) {
-        this.Anzahl_der_Personen = Anzahl_der_Personen;
         count++;
-        tischeNumber = count;
-        id = tischeNumber;
+        this.id = count;
+        this.ID_Tisch = id;
+        this.Anzahl_der_Personen = Anzahl_der_Personen;
+        this.tischeNumber = count;
     }
     public int getId() {
         return id;
@@ -39,5 +40,13 @@ public class Tische {
     @Override
     public String toString() {
         return "Tische{TischeNumber=" + tischeNumber + ", Anzahl_der_Personen=" + Anzahl_der_Personen + "}";
+    }
+
+    public String getField1() {
+        return null;
+    }
+
+    public String getField2() {
+        return null;
     }
 }

@@ -42,9 +42,10 @@ public class Kunden {
     public String toString() {
         return "Kunden{" +
                 "ID_Kunde=" + ID_Kunde +
-                ", Name='" + Name + '\'' +
-                ", Adresse='" + Adresse + '\'' +
-                ", Telefonnummer=" + Telefonnummer +
+                ", Name='" + (Name != null ? Name : "null") + '\'' +
+                ", Adresse='" + (Adresse != null ? Adresse : "null") + '\'' +
+                ", Telefonnummer='" + (Telefonnummer != null ? Telefonnummer : "null") + '\'' +
                 '}';
     }
+
 }

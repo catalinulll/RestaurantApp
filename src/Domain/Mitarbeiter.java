@@ -7,10 +7,10 @@ public class Mitarbeiter  {
     private String Name;
     private String Adresse;
     private Date Einstellungdatum;
-    private long Telefonnummer;
+    private String Telefonnummer;
     private String Beruf;
 
-    public Mitarbeiter(int ID_Mitarbeiter, String Name, String Adresse, Date Einstellungdatum, long Telefonnummer, String Beruf) {
+    public Mitarbeiter(int ID_Mitarbeiter, String Name, String Adresse, Date Einstellungdatum, String Telefonnummer, String Beruf) {
         this.ID_Mitarbeiter = ID_Mitarbeiter;
         this.Name = Name;
         this.Adresse = Adresse;
@@ -52,11 +52,11 @@ public class Mitarbeiter  {
         this.Einstellungdatum = Einstellungdatum;
     }
 
-    public long getTelefonnummer() {
+    public String getTelefonnummer() {
         return Telefonnummer;
     }
 
-    public void setTelefonnummer(long Telefonnummer) {
+    public void setTelefonnummer(String Telefonnummer) {
         this.Telefonnummer = Telefonnummer;
     }
 
